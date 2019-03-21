@@ -72,7 +72,7 @@ class clientsever:
     def setMotorState(self, qdes):
         if self.mode == 'position':
             for i in range(0, cf.dof):
-                self.client.simxSetJointTargetPosition(self.motorHandle[i], qdes[i], self.client.simxDefaultPublisher())
+                self.client.simxSetJointTargetPosition(self.motorHandle[i], qdes.item(i), self.client.simxDefaultPublisher())
         elif self.mode == 'torque':
             print "not implemented"
     
